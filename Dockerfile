@@ -1,3 +1,11 @@
-FROM tomcat:latest
-COPY ./webapp.war /usr/local/tomcat/webapps
-RUN cp -r /usr/local/tomcat/webapps.dist/* /usr/local/tomcat/webapps
+# Use Tomcat base image
+FROM tomcat:9.0-jdk17
+
+# Remove default apps
+RUN rm -rf /usr/local/tomcat/webapps/*
+
+# Copy WAR file to deployment directory
+COPY target/webapp.war /usr/local/tomcat/webapps/ROOT.war
+
+# Expose port
+EXPOSE 8080
