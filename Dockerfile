@@ -5,7 +5,7 @@ FROM tomcat:9.0-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy WAR file to deployment directory
-COPY target/webapp.war /usr/local/tomcat/webapps/ROOT.war
+COPY webapp/target/webapp.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose port
 EXPOSE 8080
