@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('git checkout'){
             steps{
-                git url: 'https://github.com/ajay521121/MavenHelloWord.git'
+                git branch: 'main', url: 'https://github.com/ajay521121/MavenHelloWord.git'
             }
         }
         stage('Build with Maven'){
