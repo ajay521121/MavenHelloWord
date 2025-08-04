@@ -14,7 +14,7 @@ pipeline{
         }
         stage('docker Image build'){
             steps{
-                sh docker build -t webapp-image .
+                sh 'docker build -t webapp-image .'
             }
         }
         stage('Docker Deployment'){
